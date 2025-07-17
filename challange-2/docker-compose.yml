@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  webserver:
+    container_name: deca-nginx
+    image: deca-nginx
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+      - "8443:443"
+    restart: unless-stopped
